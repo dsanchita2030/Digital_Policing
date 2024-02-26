@@ -1,0 +1,226 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="sgnup.css" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+     <script type="text/javascript">
+        var rev = "fwd";
+        function titlebar(val) {
+            var msg = "Submit Your Details For Digital Police GoWB";
+            var res = " ";
+            var speed = 300;
+            var pos = val;
+            msg = "" + msg + "";
+            var le = msg.length;
+            if (rev == "fwd") {
+                if (pos < le) {
+                    pos = pos + 1;
+                    scroll = msg.substr(0, pos);
+                    document.title = scroll;
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+                else {
+                    rev = "bwd";
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+            }
+            else {
+                if (pos > 0) {
+                    pos = pos - 1;
+                    var ale = le - pos;
+                    scrol = msg.substr(ale, le);
+                    document.title = scrol;
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+                else {
+                    rev = "fwd";
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+            }
+        }
+        titlebar(0);
+</script>
+    <title>
+	Registration | Apply Online
+</title>
+        
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            $('.txt').bind('copy paste cut', function (e) { e.preventDefault(); });
+
+            $(document).bind("contextmenu", function (e) {
+                alert("Right-click is not allowed!");
+                return false;
+            });
+
+            $(".ddfup").on("dragenter", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            $(".ddfup").on("dragover", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            $(".ddfup").on("drop", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                var files = evt.originalEvent.dataTransfer.files[0];
+                if (files.type.match(/image.jpeg/) || files.type.match(/image.jpg/) || files.type.match(/image.png/)) {
+                    $('.ddlblinfo').text('Please wait while the file is being uploaded.');
+                    $('.ddlbl').css('display', 'none');
+                    $('.ddlblinfo').css('display', 'block');
+                    $('.ddlblup').css('display', 'block');
+                    var xhr = new XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', uploadProgress, false);
+                    xhr.onreadystatechange = stateChange;
+                    xhr.open('POST', 'submit_Online.aspx', true);
+                    xhr.setRequestHeader('File-Name', files.name);
+                    xhr.setRequestHeader('File-Type', files.type);
+                    xhr.send(files);
+                }
+                else {
+                    $('.ddlblinfo').text('Sorry, the selected file is invalid. Please select only .JPG, .JPEG or .PNG files.');
+                    $('.ddlblinfo').css('display', 'block');
+                }
+            });
+      </script>
+    <style>
+    #msg {
+    visibility: hidden;
+    min-width: 250px;
+    background-color:yellow;
+    color: #000;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    right: 30%;
+    top: 30px;
+    font-size: 17px;
+	margin-right:30px;
+}
+
+#msg.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+    </style>
+</head>
+
+<body>
+<div class="signup">
+    
+        <form action="sgnup.html" class="sgnup-form">
+    <h2 style="color: #fff;">ADD DETAILS</h2>
+    <input type="text" name="username" placeholder="First name"><br><br>
+    <input type="text" name="username" placeholder="Last name"><br><br>
+         <input type="text" name="username" placeholder="Father's Name"><br><br>
+         <input type="text" name="username" placeholder="Mother's Name"><br><br>
+         <input type="text" name="DD-MM-YYYY" placeholder="Date Of Birth"><br><br>
+         <input type="text" name="username" placeholder="Religion"><br><br>
+         <input type="text" name="username" placeholder="Nationality"><br><br>
+         <input type="text" name="123456789" placeholder="Mobile Numer"><br><br>
+          <input type="text" placeholder="Email address"><br><br>
+            <tr>
+                <td style="text-align: left">
+                    <input name="tabvalue" type="hidden" id="tabvalue" value="0" />
+                        <input name="tabHide" type="hidden" id="tabHide" />
+            <input type="text"name=1234-5678-9123 placeholder="Id Card Number">
+                               <select name="ddlact"> 
+		<option selected="selected" value="0">-- Select --</option>
+		<option value="01">Pan Card</option>
+		<option value="02">Voter Card</option>
+        <option value="03">Aadhaar Card</option>
+		<option value="04">Passport</option>
+		<option value="05">Driving Licence</option>
+        <option value="06">Student Id Card</option>
+
+                </select><br><br></td></tr>
+             <input class="lbl" placeholder="Present Address"><br><br>
+            <input type="text" placeholder="Parmanent address"><br><br>
+               
+                <div class="pophead"><span>UPLOAD PHOTOGRAPH</span></div>
+                <div class="ddfup">
+                   
+                    <div style="width: 400px; margin-top: 10px">
+                        <div class="prg"></div>
+                    </div>
+                </div>
+                <div style="padding: 10px 0 0 40px; text-align: left">
+                    
+                </div>
+                <div style="padding: 10px 0 20px 25px; text-align: left">
+                    <input type="file" name="fupbimg" id="fupbimg" style="width:300px;" />
+                </div>
+               
+                <div style="margin-top: 8px">
+                    <input type="submit" name="btn_ok_mdl_bphoto" value="SUBMIT" id="btn_ok_mdl_bphoto" />
+                    <input type="submit" name="btn_cls_mdl_bphoto" value="CANCEL" id="btn_cls_mdl_bphoto" />
+                </div>
+          
+            
+            <div class="popup" id="bsign">
+              
+                <div class="pophead"><span>UPLOAD SIGNATURE</span></div>
+                <div class="ddfup">
+                   
+                    <div style="width: 400px; margin-top: 10px">
+                        <div class="prg"></div>
+                    </div>
+                </div>
+                
+                              <div style="padding: 10px 0 20px 25px; text-align: left">
+                    <input type="file" name="fupbsign" id="fupbsign" style="width:300px;" />
+                </div>
+               
+                <div style="margin-top: 8px">
+                    <input type="submit" name="btn_ok_mdl_bsign" value="SUBMIT" id="btn_ok_mdl_bsign" />
+                    <input type="submit" name="btn_cls_mdl_bsign" value="CANCEL" id="btn_cls_mdl_bsign" />
+                </div>
+            </div>
+            
+           
+            <input type="password" name="pass" placeholder="Password"><br><br>    
+         <input type="password" name="pass" placeholder="Confirm Password"><br><br>   
+          <input type="button" value="Sign up" onclick="myFunction()"><br><br>
+        <div id="msg">Congratulations You Sign Up successfully!!</div>
+        <script>
+function myFunction() {
+    var x = document.getElementById("msg");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+        Already have account?<a href="index.html" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Log In</a>
+    </form>
+    
+    </div>
+</body>
+</html>

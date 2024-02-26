@@ -1,0 +1,134 @@
+
+
+<html lang="en" dir="ltr">
+  <head>
+       <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+      
+    
+      
+    <script type="text/javascript">
+        var rev = "fwd";
+        function titlebar(val) {
+            var msg = "Submit Your Details For Digital Police GoWB";
+            var res = " ";
+            var speed = 300;
+            var pos = val;
+            msg = "" + msg + "";
+            var le = msg.length;
+            if (rev == "fwd") {
+                if (pos < le) {
+                    pos = pos + 1;
+                    scroll = msg.substr(0, pos);
+                    document.title = scroll;
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+                else {
+                    rev = "bwd";
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+            }
+            else {
+                if (pos > 0) {
+                    pos = pos - 1;
+                    var ale = le - pos;
+                    scrol = msg.substr(ale, le);
+                    document.title = scrol;
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+                else {
+                    rev = "fwd";
+                    timer = window.setTimeout("titlebar(" + pos + ")", speed);
+                }
+            }
+        }
+        titlebar(0);
+</script>
+    <title>
+	Registration | Apply Online
+</title>
+        
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            $('.txt').bind('copy paste cut', function (e) { e.preventDefault(); });
+
+            $(document).bind("contextmenu", function (e) {
+                alert("Right-click is not allowed!");
+                return false;
+            });
+
+            $(".ddfup").on("dragenter", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            $(".ddfup").on("dragover", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+            });
+
+            $(".ddfup").on("drop", function (evt) {
+                evt.preventDefault();
+                evt.stopPropagation();
+                var files = evt.originalEvent.dataTransfer.files[0];
+                if (files.type.match(/image.jpeg/) || files.type.match(/image.jpg/) || files.type.match(/image.png/)) {
+                    $('.ddlblinfo').text('Please wait while the file is being uploaded.');
+                    $('.ddlbl').css('display', 'none');
+                    $('.ddlblinfo').css('display', 'block');
+                    $('.ddlblup').css('display', 'block');
+                    var xhr = new XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', uploadProgress, false);
+                    xhr.onreadystatechange = stateChange;
+                    xhr.open('POST', 'submit_Online.aspx', true);
+                    xhr.setRequestHeader('File-Name', files.name);
+                    xhr.setRequestHeader('File-Type', files.type);
+                    xhr.send(files);
+                }
+                else {
+                    $('.ddlblinfo').text('Sorry, the selected file is invalid. Please select only .JPG, .JPEG or .PNG files.');
+                    $('.ddlblinfo').css('display', 'block');
+                }
+            });
+      </script>
+<body>
+
+
+      <form action="index.html" class="login-form">
+        <h1>DIGITAL POLICE</h1>
+
+        <div class="txtb">
+          <input type="text">
+          <span data-placeholder="Username"></span>
+        </div>
+
+        <div class="txtb">
+          <input type="password">
+          <span data-placeholder="Password"></span>
+        </div>
+
+        <input type="submit" class="logbtn" value="Login">
+
+        <div class="bottom-text">
+          Don't have account?<a href="sgnup.html" style="font-family:'Play', sans-serif;">&nbsp;Sign Up</a>
+        </div>
+          
+      </form>
+
+      <script type="text/javascript">
+      $(".txtb input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txtb input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+
+      </script>
+      </body>
+    </head>

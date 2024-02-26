@@ -1,0 +1,90 @@
+body
+{
+    font-family: Tahoma, Geneva, sans-serif;
+    min-height: 240vh;
+   background: url(bg.jpg) no-repeat;
+  background-size:cover;
+}
+.sgnup-form{
+  width: 250px;
+  background:rgba(44, 62, 80, 0.7);
+  height: 1400px;
+  padding: 80px 40px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 120%;
+  transform: translate(-50%,-50%);
+}
+
+.login-form h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form
+{
+    width: 240px;
+    text-align: center;
+}
+input
+{
+    
+    width: 240px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Play', sans-serif;
+    font-size: 16px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline: none;
+    color: #fff;
+}
+..txtbspan::before{
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: .5s;
+}
+
+.txtb span::after{
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(120deg,#3498db,#8e44ad);
+  transition: .5s;
+}
+input[type=button]
+{
+    border: none;
+    width: 190px;
+    background: white;
+    color: #000;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    border-radius: 15px;
+    cursor: pointer;
+}
+input[type=button]:hover
+{
+    color: #fff;
+    background-color: black;
+}
+h2
+{
+    color: #000;
+    
+}
+::placeholder {
+    color:aliceblue;
+    opacity: 0.8; /* Firefox */
+}
